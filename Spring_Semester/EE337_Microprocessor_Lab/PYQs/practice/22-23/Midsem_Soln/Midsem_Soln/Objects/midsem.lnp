@@ -1,3 +1,0 @@
-".\Objects\decrypt.obj" 
-TO ".\Objects\midsem" 
-PRINT(".\Listings\midsem.m51") RAMSIZE(256) 

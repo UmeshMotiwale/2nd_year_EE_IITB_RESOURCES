@@ -1,3 +1,0 @@
-".\Objects\qn3.obj" 
-TO ".\Objects\qn3" 
-PRINT(".\Listings\qn3.m51") RAMSIZE(256) 
