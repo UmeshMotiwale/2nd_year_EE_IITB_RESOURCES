@@ -1,0 +1,90 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/10/2024  09:20:31  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE Q1.obj TO Q1 RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  Q1.obj (Q1)
+
+
+LINK MAP OF MODULE:  Q1 (Q1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0141H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  Q1 (Q1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        Q1
+  C:0124H         SYMBOL        DELAY_1MS
+  C:0138H         SYMBOL        DELAY_200US
+  C:012FH         SYMBOL        DELAY_250US
+  C:0119H         SYMBOL        DELAY_7MS
+  C:010EH         SYMBOL        DELAY_800US
+  C:013CH         SYMBOL        H0
+  C:0133H         SYMBOL        H1
+  C:0128H         SYMBOL        H2
+  C:011DH         SYMBOL        H3
+  C:0112H         SYMBOL        H5
+  C:0100H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  C:0000H         LINE#         2
+  C:0100H         LINE#         7
+  C:0102H         LINE#         8
+  C:0104H         LINE#         9
+  C:0106H         LINE#         11
+  C:0108H         LINE#         12
+  C:010AH         LINE#         13
+  C:010CH         LINE#         15
+  C:010EH         LINE#         18
+  C:0110H         LINE#         19
+  C:0112H         LINE#         20
+  C:0114H         LINE#         21
+  C:0116H         LINE#         22
+  C:0118H         LINE#         23
+  C:0119H         LINE#         26
+  C:011BH         LINE#         27
+  C:011DH         LINE#         28
+  C:011FH         LINE#         29
+BL51 BANKED LINKER/LOCATER V6.22                                                      02/10/2024  09:20:31  PAGE 2
+
+
+  C:0121H         LINE#         30
+  C:0123H         LINE#         31
+  C:0124H         LINE#         34
+  C:0126H         LINE#         35
+  C:0128H         LINE#         36
+  C:012AH         LINE#         37
+  C:012CH         LINE#         38
+  C:012EH         LINE#         39
+  C:012FH         LINE#         42
+  C:0131H         LINE#         43
+  C:0133H         LINE#         44
+  C:0135H         LINE#         45
+  C:0137H         LINE#         46
+  C:0138H         LINE#         49
+  C:013AH         LINE#         50
+  C:013CH         LINE#         51
+  C:013EH         LINE#         52
+  C:0140H         LINE#         53
+  -------         ENDMOD        Q1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0044H BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=321
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

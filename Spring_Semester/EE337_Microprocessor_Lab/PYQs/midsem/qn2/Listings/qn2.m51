@@ -1,0 +1,71 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/11/2026  15:08:37  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\qn2.obj TO .\Objects\qn2 PRINT (.\Listings\qn2.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\qn2.obj (QN2)
+
+
+LINK MAP OF MODULE:  .\Objects\qn2 (QN2)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0157H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\qn2 (QN2)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        QN2
+  C:0130H         SYMBOL        ADD16BCD
+  C:0144H         SYMBOL        CARRY
+  C:0153H         SYMBOL        CARRY2
+  C:0147H         SYMBOL        DONE
+  C:0156H         SYMBOL        DONE2
+  C:0102H         SYMBOL        HERE
+  C:0100H         SYMBOL        MAIN
+  C:0000H         LINE#         3
+  C:0100H         LINE#         6
+  C:0102H         LINE#         7
+  C:0130H         LINE#         23
+  C:0132H         LINE#         24
+  C:0134H         LINE#         25
+  C:0136H         LINE#         26
+  C:0137H         LINE#         27
+  C:0139H         LINE#         29
+  C:013BH         LINE#         30
+  C:013DH         LINE#         32
+  C:013FH         LINE#         33
+  C:0142H         LINE#         34
+  C:0144H         LINE#         36
+  C:0147H         LINE#         38
+  C:0149H         LINE#         39
+  C:014AH         LINE#         40
+  C:014CH         LINE#         42
+  C:014EH         LINE#         43
+  C:0151H         LINE#         44
+  C:0153H         LINE#         46
+  C:0156H         LINE#         50
+  -------         ENDMOD        QN2
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/11/2026  15:08:37  PAGE 2
+
+
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 002EH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=343
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

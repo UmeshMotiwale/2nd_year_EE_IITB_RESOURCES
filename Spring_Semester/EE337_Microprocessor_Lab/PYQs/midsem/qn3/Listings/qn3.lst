@@ -1,0 +1,225 @@
+A51 MACRO ASSEMBLER  QN3                                                                  02/11/2026 16:29:59 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\qn3.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE qn3.a51 SET(SMALL) DEBUG PRINT(.\Listings\qn3.lst) OBJECT(.\Objects\qn3
+                      .obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+0000                   2     ORG 0H
+0000 020100            3     LJMP MAIN
+0100                   4     ORG 100H
+0100                   5     MAIN:
+0100 3130              6     CALL SOLVE2EQ
+                       7     
+0102 80FE              8     HERE: SJMP HERE
+0130                   9     ORG 130H
+                      10     
+0130                  11     SOLVE2EQ:
+0130 AF00             12     MOV R7,00
+                      13     ; Write your code here
+0132                  14     EXP1:
+0132 7860             15     MOV R0,#60H
+0134 E6               16     MOV A,@R0
+0135 C3               17     CLR C
+0136 947F             18     SUBB A,#127 
+0138 5004             19     JNC CHECK1
+013A 8660             20     MOV 60h,@R0
+013C 8007             21     JMP EXP2
+                      22     
+013E                  23     CHECK1:
+013E F4               24     CPL A
+013F 2481             25     ADD A,#81h
+0141 F8               26     MOV R0,A
+0142 8660             27     MOV 60h,@R0
+0144 0F               28     INC R7
+                      29     
+0145                  30     EXP2:
+0145 7861             31     MOV R0,#61H
+0147 E6               32     MOV A,@R0
+0148 C3               33     CLR C
+0149 947F             34     SUBB A,#127 
+014B 5004             35     JNC CHECK2
+014D 8661             36     MOV 61h,@R0
+014F 8007             37     JMP EXP3
+                      38     
+0151                  39     CHECK2:
+0151 F4               40     CPL A
+0152 2401             41     ADD A,#01h
+0154 F8               42     MOV R0,A
+0155 8661             43     MOV 61h,@R0
+0157 0F               44     INC R7
+                      45     
+0158                  46     EXP3:
+0158 7862             47     MOV R0,#62H
+015A E6               48     MOV A,@R0
+015B C3               49     CLR C
+015C 947F             50     SUBB A,#127 
+015E 5004             51     JNC CHECK3
+0160 8662             52     MOV 62h,@R0
+0162 8007             53     JMP EXP4
+                      54     
+0164                  55     CHECK3:
+0164 F4               56     CPL A
+0165 2401             57     ADD A,#01h
+A51 MACRO ASSEMBLER  QN3                                                                  02/11/2026 16:29:59 PAGE     2
+
+0167 F8               58     MOV R0,A
+0168 8662             59     MOV 62h,@R0
+016A 0F               60     INC R7
+                      61     
+016B                  62     EXP4:
+016B 7863             63     MOV R0,#63H
+016D E6               64     MOV A,@R0
+016E C3               65     CLR C
+016F 947F             66     SUBB A,#127 
+0171 5004             67     JNC CHECK4
+0173 8663             68     MOV 63h,@R0
+0175 8007             69     JMP EXP5
+                      70     
+0177                  71     CHECK4:
+0177 F4               72     CPL A
+0178 2401             73     ADD A,#01h
+017A F8               74     MOV R0,A
+017B 8663             75     MOV 63h,@R0
+017D 0F               76     INC R7
+                      77     
+017E                  78     EXP5:
+017E 7864             79     MOV R0,#64H
+0180 E6               80     MOV A,@R0
+0181 C3               81     CLR C
+0182 947F             82     SUBB A,#127 
+0184 5004             83     JNC CHECK5
+0186 8664             84     MOV 64h,@R0
+0188 8007             85     JMP EXP6
+                      86     
+018A                  87     CHECK5:
+018A F4               88     CPL A
+018B 2401             89     ADD A,#01h
+018D F8               90     MOV R0,A
+018E 8664             91     MOV 64h,@R0
+0190 0F               92     INC R7
+                      93     
+0191                  94     EXP6:
+0191 7865             95     MOV R0,#65H
+0193 E6               96     MOV A,@R0
+0194 C3               97     CLR C
+0195 947F             98     SUBB A,#127 
+0197 5004             99     JNC CHECK6
+0199 8665            100     MOV 65h,@R0
+019B 8007            101     JMP OKAY
+                     102     
+019D                 103     CHECK6:
+019D F4              104     CPL A
+019E 2401            105     ADD A,#01h
+01A0 F8              106     MOV R0,A
+01A1 8665            107     MOV 65h,@R0
+01A3 0F              108     INC R7
+                     109     
+01A4                 110     OKAY:
+01A4 E560            111     MOV A,60h
+01A6 8563F0          112     MOV B,63h
+01A9 A4              113     MUL AB
+01AA F550            114     MOV 50h,A
+                     115     
+01AC E561            116     MOV A,61h
+01AE 8562F0          117     MOV B,62h
+01B1 A4              118     MUL AB
+01B2 F551            119     MOV 51h,A
+                     120     
+01B4 E550            121     MOV A,50h
+01B6 C3              122     CLR C
+01B7 9551            123     SUBB A,51h
+A51 MACRO ASSEMBLER  QN3                                                                  02/11/2026 16:29:59 PAGE     3
+
+01B9 F552            124     MOV 52h,A  
+                     125     
+01BB                 126     MULTIPLICATION:
+01BB A863            127     MOV R0, 63H
+01BD A964            128     MOV R1, 64H
+01BF AA61            129     MOV R2, 61H
+01C1 AB65            130     MOV R3, 65H
+01C3 31E5            131     ACALL ADD_SUB
+01C5 8C72            132     MOV 72H, R4
+                     133     
+01C7 A860            134     MOV R0, 60h
+01C9 A965            135     MOV R1, 65H
+01CB AA62            136     MOV R2, 62H
+01CD AB64            137     MOV R3, 64H
+01CF 31E5            138     ACALL ADD_SUB
+01D1 8C73            139     MOV 73H, R4
+                     140     
+01D3 E572            141     MOV A,72h
+01D5 8552F0          142     MOV B,52h
+01D8 84              143     DIV AB
+01D9 F570            144     MOV 70h,A
+                     145     
+01DB E573            146     MOV A,73h
+01DD 8552F0          147     MOV B,52h
+01E0 84              148     DIV AB
+01E1 F571            149     MOV 71h,A
+01E3 8014            150     JMP DONE
+                     151     
+01E5                 152     ADD_SUB:
+01E5 EA              153     MOV A, R2
+01E6 8BF0            154     MOV B, R3
+01E8 A4              155     MUL AB
+01E9 FC              156     MOV R4, A
+                     157     
+01EA E8              158     MOV A, R0
+01EB 89F0            159     MOV B, R1
+01ED A4              160     MUL AB
+                     161     
+01EE 9C              162     SUBB A, R4
+01EF 4003            163     JC next
+01F1 FC              164     MOV R4, A
+01F2 8004            165     SJMP dx
+01F4                 166     next:
+01F4 2402            167     ADD A,#02h
+01F6 F4              168     CPL A
+01F7 FC              169     MOV R4,A
+01F8                 170     dx:
+01F8 22              171     RET
+                     172     
+01F9                 173     DONE:
+01F9 22              174     RET
+                     175     END
+A51 MACRO ASSEMBLER  QN3                                                                  02/11/2026 16:29:59 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ADD_SUB. . . . . .  C ADDR   01E5H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+CHECK1 . . . . . .  C ADDR   013EH   A   
+CHECK2 . . . . . .  C ADDR   0151H   A   
+CHECK3 . . . . . .  C ADDR   0164H   A   
+CHECK4 . . . . . .  C ADDR   0177H   A   
+CHECK5 . . . . . .  C ADDR   018AH   A   
+CHECK6 . . . . . .  C ADDR   019DH   A   
+DONE . . . . . . .  C ADDR   01F9H   A   
+DX . . . . . . . .  C ADDR   01F8H   A   
+EXP1 . . . . . . .  C ADDR   0132H   A   
+EXP2 . . . . . . .  C ADDR   0145H   A   
+EXP3 . . . . . . .  C ADDR   0158H   A   
+EXP4 . . . . . . .  C ADDR   016BH   A   
+EXP5 . . . . . . .  C ADDR   017EH   A   
+EXP6 . . . . . . .  C ADDR   0191H   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+MULTIPLICATION . .  C ADDR   01BBH   A   
+NEXT . . . . . . .  C ADDR   01F4H   A   
+OKAY . . . . . . .  C ADDR   01A4H   A   
+SOLVE2EQ . . . . .  C ADDR   0130H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

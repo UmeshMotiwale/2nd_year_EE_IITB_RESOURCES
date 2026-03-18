@@ -1,0 +1,136 @@
+ORG 0H
+LJMP MAIN
+ORG 100H
+MAIN:
+CALL MAINN
+HERE: SJMP HERE
+ORG 130H
+//////////////////////
+MAINN:
+MOV R0,#70h
+MOV R1,#73h
+CALL MULL
+MOV 60h,B
+MOV 61h,A
+
+MOV R0,#71h
+MOV R1,#74h
+CALL MULL
+MOV 62h,B
+MOV 63h,A
+
+MOV R0,#72h
+MOV R1,#75h
+CALL MULL
+MOV 64h,B
+MOV 65h,A
+
+MOV A,61h
+ADD A,63h
+MOV 68h,A
+
+MOV A,60h
+ADDC A,62h
+MOV 67h,A
+
+JC CARRY
+MOV 66H,#00h
+JMP Hi
+CARRY:
+MOV 66H,#01h
+
+Hi:
+MOV A,68h
+ADD A,65H
+MOV 52h,A
+MOV A,67h
+ADDC A,64h
+MOV 51h,A
+
+JC Carry2
+MOV 50h,66h
+JMP Hello
+CARRY2:
+MOV A, 66h
+ADD A,#01h
+MOV 50h,A
+
+Hello:
+MOV 76h, #01h
+MOV 77h, #00h
+MOV 78H, #00h
+MOV 79H, #00h
+MOV 7Ah, #80h
+MOV 7Bh, #00h
+
+Check1_1:
+MOV A,50h
+CLR C
+SUBB A,76H
+JC Hey//////final
+JZ Check1_2
+JMP COND1
+
+Check1_2:
+MOV A,51h
+CLR C
+SUBB A,77H
+JC Hey //////final
+JZ Check1_3
+JMP COND1
+
+Check1_3:
+MOV A,52h
+CLR C
+SUBB A,78H
+JZ HEY
+JNC COND1
+
+HEY:
+Check2_1:
+MOV A,50h
+CLR C
+SUBB A,79H
+JC COND3//////final
+JNC COND2
+
+Check2_2:
+MOV A,51h
+CLR C
+SUBB A,7AH
+JC COND3 //////final
+JNC COND2
+
+Check2_3:
+MOV A,52h
+CLR C
+SUBB A,7BH
+JC COND3 //////final
+
+Jmp COND2
+
+COND1:
+MOV P3,#00h
+SETB P3.0
+SETB P3.1
+JMP Done
+
+COND2:
+MOV P3,#00h
+SETB P3.1
+JMP Done
+
+COND3:
+MOV P3,#00h
+SETB P3.0
+JMP Done
+
+MULL:
+MOV A,@R0
+MOV B,@R1
+MUL AB
+RET
+
+Done:
+RET
+END

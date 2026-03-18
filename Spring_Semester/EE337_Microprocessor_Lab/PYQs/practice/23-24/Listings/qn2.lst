@@ -1,0 +1,274 @@
+A51 MACRO ASSEMBLER  QN2                                                                  02/11/2026 02:38:19 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\qn2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE qn2.a51 SET(SMALL) DEBUG PRINT(.\Listings\qn2.lst) OBJECT(.\Objects\qn2
+                      .obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+0000                   2     ORG 0H
+0000 020100            3     LJMP MAIN
+0100                   4     ORG 100H
+0100                   5     MAIN:
+0100 318A              6     CALL DETER
+0102 80FE              7     HERE: SJMP HERE
+0130                   8     ORG 130H
+                       9     
+0130                  10     TASK1:
+0130 E564             11     MOV A,64h
+0132 8568F0           12     MOV B,68H
+0135 A4               13     MUL AB
+0136 F580             14     MOV 80h,A
+0138 E565             15     MOV A,65h
+013A 8567F0           16     MOV B,67H
+013D A4               17     MUL AB
+013E F4               18     CPL A
+013F 2401             19     ADD A, #01h
+0141 2580             20     ADD A,80h
+0143 F581             21     MOV 81H,A
+0145 E560             22     MOV A,60h
+0147 8581F0           23     MOV B,81h
+014A A4               24     MUL AB
+014B F582             25     MOV 82h,A   
+014D 22               26     Ret
+                      27     
+014E                  28     TASK2:
+014E E563             29     MOV A,63h
+0150 8568F0           30     MOV B,68H
+0153 A4               31     MUL AB
+0154 F580             32     MOV 80h,A
+0156 E565             33     MOV A,65h
+0158 8566F0           34     MOV B,66H
+015B A4               35     MUL AB
+015C F4               36     CPL A
+015D 2401             37     ADD A, #01h
+015F 2580             38     ADD A,80h
+0161 F581             39     MOV 81H,A
+0163 E561             40     MOV A,61h
+0165 8581F0           41     MOV B,81h
+0168 A4               42     MUL AB
+0169 F583             43     MOV 83h,A   
+016B 22               44     Ret
+                      45     
+016C                  46     TASK3:
+016C E563             47     MOV A,63h
+016E 8567F0           48     MOV B,67H
+0171 A4               49     MUL AB
+0172 F580             50     MOV 80h,A
+0174 E564             51     MOV A,64h
+0176 8566F0           52     MOV B,66H
+0179 A4               53     MUL AB
+017A F4               54     CPL A
+017B 2401             55     ADD A, #01h
+017D 2580             56     ADD A,80h     
+017F F581             57     MOV 81H,A
+A51 MACRO ASSEMBLER  QN2                                                                  02/11/2026 02:38:19 PAGE     2
+
+0181 E562             58     MOV A,62h
+0183 8581F0           59     MOV B,81h
+0186 A4               60     MUL AB
+0187 F584             61     MOV 84h,A   
+0189 22               62     Ret
+                      63     
+018A                  64     DETER:
+                      65     
+                      66     
+                      67     
+                      68     
+                      69     
+                      70     
+                      71     
+018A 3130             72     CALL TASK1  
+018C 314E             73     CALL TASK2  
+018E 316C             74     CALL TASK3  
+0190 8582F0           75     MOV B,82h
+0193 E584             76     MOV A,84h
+0195 25F0             77     ADD A,B
+0197 F5F0             78     MOV B,A
+0199 E583             79     MOV A,83h
+019B F4               80     CPL A
+019C 2401             81     ADD A,#01h
+019E 25F0             82     ADD A,B
+01A0 F585             83     MOV 85h,A  
+                      84     
+                      85     
+01A2 B4001D           86     CJNE A,#00h,ADJOINT
+01A5 7570FF           87     MOV 70h, #0FFh
+01A8 7571FF           88     MOV 71h, #0FFh
+01AB 7572FF           89     MOV 72h, #0FFh
+01AE 7573FF           90     MOV 73h, #0FFh
+01B1 7574FF           91     MOV 74h, #0FFh
+01B4 7575FF           92     MOV 75h, #0FFh
+01B7 7576FF           93     MOV 76h, #0FFh
+01BA 7577FF           94     MOV 77h, #0FFh
+01BD 7578FF           95     MOV 78h, #0FFh
+01C0 418C             96     JMP Done
+                      97     
+01C2                  98     ADJOINT:
+01C2 7864             99     MOV R0,#64h
+01C4 7968            100     MOV R1,#68h
+01C6 7A65            101     MOV R2,#65h
+01C8 7B67            102     MOV R3,#67h
+01CA 517E            103     CALL MUL_SUB
+01CC 8C70            104     MOV 70h,R4
+                     105     
+01CE 7865            106     MOV R0,#65h
+01D0 7966            107     MOV R1,#66h
+01D2 7A63            108     MOV R2,#63h
+01D4 7B68            109     MOV R3,#68h
+01D6 517E            110     CALL MUL_SUB
+01D8 8C73            111     MOV 73h,R4
+                     112     
+01DA 7863            113     MOV R0,#63h
+01DC 7967            114     MOV R1,#67h
+01DE 7A64            115     MOV R2,#64h
+01E0 7B66            116     MOV R3,#66h
+01E2 517E            117     CALL MUL_SUB
+01E4 8C76            118     MOV 76h,R4
+                     119     
+01E6 7862            120     MOV R0,#62h
+01E8 7967            121     MOV R1,#67h
+01EA 7A61            122     MOV R2,#61h
+01EC 7B68            123     MOV R3,#68h
+A51 MACRO ASSEMBLER  QN2                                                                  02/11/2026 02:38:19 PAGE     3
+
+01EE 517E            124     CALL MUL_SUB
+01F0 8C71            125     MOV 71h,R4
+                     126     
+01F2 7860            127     MOV R0,#60h
+01F4 7968            128     MOV R1,#68h
+01F6 7A62            129     MOV R2,#62h
+01F8 7B66            130     MOV R3,#66h
+01FA 517E            131     CALL MUL_SUB
+01FC 8C74            132     MOV 74h,R4
+                     133     
+01FE 7861            134     MOV R0,#61h
+0200 7966            135     MOV R1,#66h
+0202 7A60            136     MOV R2,#60h
+0204 7B67            137     MOV R3,#67h
+0206 517E            138     CALL MUL_SUB
+0208 8C77            139     MOV 77h,R4
+                     140     
+020A 7861            141     MOV R0,#61h
+020C 7965            142     MOV R1,#65h
+020E 7A62            143     MOV R2,#62h
+0210 7B64            144     MOV R3,#64h
+0212 517E            145     CALL MUL_SUB
+0214 8C72            146     MOV 72h,R4
+                     147     
+0216 7863            148     MOV R0,#63h
+0218 7962            149     MOV R1,#62h
+021A 7A65            150     MOV R2,#65h
+021C 7B60            151     MOV R3,#60h
+021E 517E            152     CALL MUL_SUB
+0220 8C75            153     MOV 75h,R4
+                     154     
+0222 7860            155     MOV R0,#60h
+0224 7964            156     MOV R1,#64h
+0226 7A61            157     MOV R2,#61h
+0228 7B63            158     MOV R3,#63h
+022A 517E            159     CALL MUL_SUB
+022C 8C78            160     MOV 78h,R4
+                     161     
+022E AD70            162     MOV R5,70h
+0230 AE85            163     MOV R6,85h
+0232 5178            164     CALL DIVIDE
+0234 8D70            165     MOV 70h,R5
+                     166     
+0236 AD71            167     MOV R5,71h
+0238 AE85            168     MOV R6,85h
+023A 5178            169     CALL DIVIDE
+023C 8D71            170     MOV 71h,R5
+                     171     
+023E AD72            172     MOV R5,72h
+0240 AE85            173     MOV R6,85h
+0242 5178            174     CALL DIVIDE
+0244 8D72            175     MOV 72h,R5
+                     176     
+0246 AD73            177     MOV R5,73h
+0248 AE85            178     MOV R6,85h
+024A 5178            179     CALL DIVIDE
+024C 8D73            180     MOV 73h,R5
+                     181     
+024E AD74            182     MOV R5,74h
+0250 AE85            183     MOV R6,85h
+0252 5178            184     CALL DIVIDE
+0254 8D74            185     MOV 74h,R5
+                     186     
+0256 AD75            187     MOV R5,75h
+0258 AE85            188     MOV R6,85h
+025A 5178            189     CALL DIVIDE
+A51 MACRO ASSEMBLER  QN2                                                                  02/11/2026 02:38:19 PAGE     4
+
+025C 8D75            190     MOV 75h,R5
+                     191     
+025E AD76            192     MOV R5,76h
+0260 AE85            193     MOV R6,85h
+0262 5178            194     CALL DIVIDE
+0264 8D76            195     MOV 76h,R5
+                     196     
+0266 AD77            197     MOV R5,77h
+0268 AE85            198     MOV R6,85h
+026A 5178            199     CALL DIVIDE
+026C 8D77            200     MOV 77h,R5
+                     201     
+026E AD78            202     MOV R5,78h
+0270 AE85            203     MOV R6,85h
+0272 5178            204     CALL DIVIDE
+0274 8D78            205     MOV 78h,R5
+0276 418C            206     AJMP Done
+                     207     
+0278                 208     DIVIDE:
+0278 ED              209     MOV A,R5
+0279 8EF0            210     MOV B,R6
+027B 84              211     DIV AB
+027C FD              212     MOV R5,A
+027D 22              213     RET
+                     214     
+                     215     
+027E                 216     MUL_SUB:
+027E E8              217     MOV A,R0
+027F 89F0            218     MOV B,R1
+0281 A4              219     MUL AB
+0282 FC              220     MOV R4,A
+0283 EA              221     MOV A,R2
+0284 8BF0            222     MOV B,R3
+0286 A4              223     MUL AB
+0287 FD              224     MOV R5,A
+0288 EC              225     MOV A,R4
+0289 9D              226     SUBB A,R5
+028A FC              227     MOV R4,A
+028B 22              228     RET
+                     229     
+                     230     
+028C                 231     Done:
+028C 22              232     RET
+                     233     END
+A51 MACRO ASSEMBLER  QN2                                                                  02/11/2026 02:38:19 PAGE     5
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+ADJOINT. . . . . .  C ADDR   01C2H   A   
+B. . . . . . . . .  D ADDR   00F0H   A   
+DETER. . . . . . .  C ADDR   018AH   A   
+DIVIDE . . . . . .  C ADDR   0278H   A   
+DONE . . . . . . .  C ADDR   028CH   A   
+HERE . . . . . . .  C ADDR   0102H   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+MUL_SUB. . . . . .  C ADDR   027EH   A   
+TASK1. . . . . . .  C ADDR   0130H   A   
+TASK2. . . . . . .  C ADDR   014EH   A   
+TASK3. . . . . . .  C ADDR   016CH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
