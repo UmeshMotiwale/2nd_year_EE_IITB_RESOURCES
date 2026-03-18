@@ -1,4 +1,4 @@
-# 📚 Second Year Engineering Resources
+# 📚 Second Year EE Resources
 
 Welcome to my collection of second-year engineering resources.  
 This repository contains well-organized study materials that I used throughout my academic year.
